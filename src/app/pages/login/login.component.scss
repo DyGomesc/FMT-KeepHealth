@@ -1,0 +1,150 @@
+@import "../../../styles/variables.scss";
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: $primary-bg-color;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .main-section {
+    gap: 8px;
+
+    flex-grow: 1;
+  }
+
+  .form-section {
+    flex-grow: 0.3;
+    padding: 0 35px;
+    border-radius: 0 50px 50px 0;
+    background-color: $secondary-bg-color;
+
+    img {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 45px;
+    }
+
+    .form-wrapper {
+      width: 100%;
+      color: $text-color;
+      font-size: 16px;
+      text-align: start;
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      .input-content {
+        height: 50px;
+        border-radius: 8px;
+        display: flex;
+        margin-bottom: 30px;
+
+        input {
+          border: none;
+          border-radius: 8px 0 0 8px;
+          background-color: $third-bg-color;
+          padding: 12px 0 12px 20px;
+          width: 100%;
+        }
+
+        .icon {
+          padding: 12px;
+          background-color: $primary-color;
+          border-radius: 0 8px 8px 0;
+
+          img {
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    .btn-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 30px;
+
+      .reset-senha {
+        font-size: 14px;
+        color: $secondary-color;
+
+        &:hover {
+          color: $primary-color;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+
+        font-size: 14px;
+        color: $primary-color;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        div {
+          flex-grow: 1;
+          height: 2px;
+          background-color: $primary-color;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+      background: transparent;
+      padding: 12px 24px;
+      cursor: pointer;
+
+      &.btn-primary {
+        background-color: $primary-color;
+        color: #fff;
+        
+
+        &:hover {
+          transition: ease-in-out;
+          color: $primary-color;
+          background-color: #fff;
+          
+        }
+      }
+
+      &.btn-secondary {
+        border: 1px solid $primary-color;
+        color: $primary-color;
+
+        &:hover {
+          background-color: $primary-color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
