@@ -2,31 +2,43 @@
   <section class="form-section">
     <img src="/assets/svg/Logo.svg" alt="logo Keep Health" />
     <h2>Entre com a sua conta</h2>
-    <form class="form-wrapper">
+    <form class="form-wrapper" (ngSubmit)="entrar()" #loginForm="ngForm">
       <label>Email</label>
       <div class="input-content">
-        <input type="email" placeholder="user@keephealth.com" />
+        <input
+          type="email"
+          name="email"
+          placeholder="user@keephealth.com"
+          [(ngModel)]="login.loginEmail"
+          #loginEmail="ngModel"
+        />
         <div class="icon">
           <img src="/assets/svg/email-icon.svg" alt="" />
         </div>
       </div>
       <label>Senha</label>
       <div class="input-content">
-        <input type="password" placeholder="Senha" />
+        <input
+          type="password"
+          name="senha"
+          placeholder="Senha"
+          [(ngModel)]="login.loginSenha"
+          #loginSenha="ngModel"
+        />
         <div class="icon">
           <img src="/assets/svg/password-icon.svg" alt="" />
         </div>
       </div>
+      <button type="submit" class="btn-primary">Entrar</button>
     </form>
     <div class="btn-wrapper">
-      <button class="btn-primary">Entrar</button>
       <span class="reset-senha">Esqueceu a senha?</span>
       <div class="divider">
         <div></div>
         <span>Ou</span>
         <div></div>
       </div>
-      <button class="btn-secondary">Cadastrar</button>
+      <button (click)="cadastrar()" class="btn-secondary">Cadastrar</button>
     </div>
   </section>
   <section class="main-section">

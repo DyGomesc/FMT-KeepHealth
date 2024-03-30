@@ -5,7 +5,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 export const routes: Routes = [
     {
-        path: "",
+        path: "home",
         component: HomeComponent
     },
     {
