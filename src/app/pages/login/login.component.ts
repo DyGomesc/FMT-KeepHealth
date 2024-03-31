@@ -13,34 +13,38 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  login = {
-    loginEmail: "",
-    loginSenha: ""
-  }
+  usuariosCadastrados: any[] = [];
 
-  constructor(private router: Router) { }
+  loginObj: any = {
+    email: "",
+    senha: ""
+  };
+
+  constructor(private router: Router) { };
+
+  ngOnInit() {
+    const localData = localStorage.getItem('usuariosCadastrados');
+    if (localData != null) {
+      this.usuariosCadastrados = JSON.parse(localData)
+    }
+  };
 
   entrar() {
+    const usuarioCadastrado = this.usuariosCadastrados.find(m => m.email == this.loginObj.email && m.senha == this.loginObj.senha);
+    if (usuarioCadastrado != undefined) {
+      this.router.navigateByUrl('/home')
+      alert("Usuário Logado com Sucesso!")
+    } else {
+      alert("Dados de Login incorretos.")
+    }
+  };
 
-    // const usuarioLocal = localStorage.getItem('usuarios')
-
-    // const usuarioAtual = usuarios.find((usuario) => usuarios.email === this.login.loginEmail && usuarios.senha === this.login.loginSenha);
-    // if (usuarioAtual != undefined) {
-    //   alert("Usuário Encontrado...")
-    //   localStorage.setItem('usuarioLogado', JSON.stringify(usuarioAtual))
-    //   this.router.navigateByUrl('/home')
-    // } else {
-    //   alert("Usuário não encontrado!")
-    // }
-
-
-    // if (this.login.loginEmail && this.login.loginSenha) {
-    //   this.router.navigateByUrl('/home')
-    // }
+  resetSenha() {
+    
   };
 
   cadastrar() {
     this.router.navigateByUrl('/cadastro')
-  }
+  };
 
 }

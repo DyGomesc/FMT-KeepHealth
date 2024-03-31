@@ -37,21 +37,24 @@ export class CadastroComponent {
         senha: this.cadastroUsuario.value.senha,
       }
 
-      const usuarioLocal = localStorage.getItem('usuarios');
+      const usuarioLocal = localStorage.getItem('usuariosCadastrados');
       if (usuarioLocal != null) {
-        const usuarios = JSON.parse(usuarioLocal);
-        usuarios.push(usuario);
-        localStorage.setItem('usuarios', JSON.stringify(usuarios))
+        const usuariosCadastrados = JSON.parse(usuarioLocal);
+        usuariosCadastrados.push(usuario);
+        localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosCadastrados))
       }else {
-        const usuarios = [];
-        usuarios.push(usuario);
-        localStorage.setItem('usuarios', JSON.stringify(usuarios))
+        const usuariosCadastrados = [];
+        usuariosCadastrados.push(usuario);
+        localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosCadastrados))
       } 
-      alert("Cadastrado com Sucesso!")   
+      alert("Cadastrado com Sucesso!")
+      this.router.navigateByUrl('/login')        
+    } else{
+      alert("As Senhas não conferem!")
     }
   };
 
   fazerLogin(){
-    this.router.navigate(['/login'])
+    this.router.navigateByUrl('/login')
   }
 }

@@ -2,14 +2,14 @@
   <section class="form-section">
     <img src="/assets/svg/Logo.svg" alt="logo Keep Health" />
     <h2>Entre com a sua conta</h2>
-    <form class="form-wrapper" (ngSubmit)="entrar()" #loginForm="ngForm">
+    <form class="form-wrapper">
       <label>Email</label>
       <div class="input-content">
         <input
           type="email"
           name="email"
           placeholder="user@keephealth.com"
-          [(ngModel)]="login.loginEmail"
+          [(ngModel)]="loginObj.email"
           #loginEmail="ngModel"
         />
         <div class="icon">
@@ -22,17 +22,21 @@
           type="password"
           name="senha"
           placeholder="Senha"
-          [(ngModel)]="login.loginSenha"
+          [(ngModel)]="loginObj.senha"
           #loginSenha="ngModel"
         />
         <div class="icon">
           <img src="/assets/svg/password-icon.svg" alt="" />
         </div>
       </div>
-      <button type="submit" class="btn-primary">Entrar</button>
+      <button 
+      type="submit" 
+      class="btn-primary"
+      (click)="entrar()"
+      >Entrar</button>
     </form>
     <div class="btn-wrapper">
-      <span class="reset-senha">Esqueceu a senha?</span>
+      <span class="reset-senha" (click)="resetSenha()">Esqueceu a senha?</span>
       <div class="divider">
         <div></div>
         <span>Ou</span>
