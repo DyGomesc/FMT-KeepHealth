@@ -39,9 +39,23 @@ export class LoginComponent {
     }
   };
 
-  resetSenha() {
-    
-  };
+ resetSenha() {    
+    const email = prompt('Digite o seu email:');
+
+    if (email) {            
+      const usuarioEncontrado = this.usuariosCadastrados.find((usuario: any) => usuario.email === email);
+
+      if (usuarioEncontrado) {        
+        usuarioEncontrado.senha = 'a1b2c4d4';
+        localStorage.setItem('usuariosCadastrados', JSON.stringify(this.usuariosCadastrados));
+        alert('Senha redefinida com sucesso! Nova senha: a1b2c4d4');
+      } else {
+        alert('Usuário não encontrado com o email informado.');
+      }
+    } else {
+      alert('Email não fornecido. Operação cancelada.');
+    }
+  }
 
   cadastrar() {
     this.router.navigateByUrl('/cadastro')
