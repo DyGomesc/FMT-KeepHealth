@@ -5,6 +5,11 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 export const routes: Routes = [
     {
+      path: '',
+      redirectTo: "home",
+      pathMatch: "full"
+    },
+    {
         path: "home",
         component: HomeComponent
     },
