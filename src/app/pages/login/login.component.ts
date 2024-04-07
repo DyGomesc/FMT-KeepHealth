@@ -18,7 +18,8 @@ export class LoginComponent {
   // Criação Model object
   loginObj: any = {
     email: "",
-    senha: ""
+    senha: "",
+    auth: ""
   };
 
   constructor(private router: Router) { };
@@ -37,9 +38,12 @@ export class LoginComponent {
   // Se não digitar os dados corretos, irá receber a mensagem "Dados de login incorretos"
   entrar() {
     const usuarioCadastrado = this.usuariosCadastrados.find(m => m.email == this.loginObj.email && m.senha == this.loginObj.senha);
+   
     if (usuarioCadastrado != undefined) {
       this.router.navigateByUrl('/home')
+      usuarioCadastrado.auth = 'logado'      
       alert("Usuário Logado com Sucesso!")
+      localStorage.setItem('usuariosCadastrados', JSON.stringify(usuarioCadastrado))
     } else {
       alert("Dados de Login incorretos.")
     }

@@ -42,6 +42,7 @@ export class CadastroComponent {
         email: this.cadastroUsuario.value.email,
         dataNascimento: this.cadastroUsuario.value.dataNascimento,
         senha: this.cadastroUsuario.value.senha,
+        auth: "",
       }
 
       const usuarioLocal = localStorage.getItem('usuariosCadastrados');

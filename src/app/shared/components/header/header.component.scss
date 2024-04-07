@@ -1,0 +1,27 @@
+@import "../../../../styles/variables.scss";
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+    img{
+        max-width: 7rem;
+        margin-left: 10px;
+    }
+
+    .sign-out{
+        margin-right: 30px;
+        
+        span{
+            cursor: pointer;
+
+            &:hover{
+                color: $primary-color;
+            }
+        }
+    }
+
+
+}

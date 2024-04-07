@@ -1,0 +1,43 @@
+@import "../../../styles/variables.scss";
+
+main {
+  background-color: $secondary-bg-color;
+  color: $text-color;
+  height: 100%;
+
+  app-header {
+    height: 100%;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+
+    .home-content {
+      background-color: $primary-bg-color;
+      border-radius: 30px 0 0 0;
+      box-shadow: inset 0 1px 5px rgba(26, 25, 25, 0.158);
+      flex-grow: 1;
+      height: 100%;
+
+      h3 {
+        padding: 20px;
+      }
+
+      .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    app-sidebar {
+      flex-grow: 0.1;
+      height: 100%;
+    }
+  }
+}
