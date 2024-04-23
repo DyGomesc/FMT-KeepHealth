@@ -2,15 +2,15 @@
   <section class="form-section">
     <img src="/assets/svg/Logo.svg" alt="logo Keep Health" />
     <h2>Entre com a sua conta</h2>
-    <form class="form-wrapper">
+
+    <form class="form-wrapper" [formGroup]="loginForm">
       <label>Email</label>
       <div class="input-content">
         <input
           type="email"
           name="email"
           placeholder="user@keephealth.com"
-          [(ngModel)]="loginObj.email"
-          #loginEmail="ngModel"
+          formControlName="email"
         />
         <div class="icon">
           <img src="/assets/svg/email-icon.svg" alt="" />
@@ -22,8 +22,7 @@
           type="password"
           name="senha"
           placeholder="Senha"
-          [(ngModel)]="loginObj.senha"
-          #loginSenha="ngModel"
+          formControlName="senha"
         />
         <div class="icon">
           <img src="/assets/svg/password-icon.svg" alt="" />
@@ -35,6 +34,8 @@
       (click)="entrar()"
       >Entrar</button>
     </form>
+
+
     <div class="btn-wrapper">
       <span class="reset-senha" (click)="resetSenha()">Esqueceu a senha?</span>
       <div class="divider">
@@ -45,6 +46,7 @@
       <button (click)="cadastrar()" class="btn-secondary">Cadastrar</button>
     </div>
   </section>
+
   <section class="main-section">
     <h1>Sua jornada saudável começa aqui!</h1>
     <img src="/assets/svg/keep health.svg" alt="" />

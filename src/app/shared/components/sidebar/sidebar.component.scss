@@ -1,24 +1,32 @@
 @import "../../../../styles/variables.scss";
 
-.sidebar-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
+.sidenav-header{
+    padding-top: 24px;
+    text-align: center;
 
-    ul{
-        list-style: none;
-        padding-top: 80px;
+    // img{
+    //    border-radius: 100%;
+    //    object-fit: cover;
+    //    margin-bottom: 10px;
+    // }
 
-        li{
-            padding: 5px;
-            margin-bottom: 15px;
-            cursor: pointer;
-
-            &:hover{
-                color: $primary-color;
-            }
+    .header-text{
+        h2{
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 500;
+            color: #fff;
         }
     }
+
+}
+
+.hide-header-text{
+    opacity: 0;
+    height: 0px;
+}
+
+.span{
+    color: #fff;
 }

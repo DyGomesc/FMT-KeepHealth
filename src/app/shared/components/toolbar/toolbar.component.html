@@ -1,0 +1,15 @@
+<div class="user">
+    <div *ngIf="userLogged">
+      <h4 class="title">{{ userLogged.nome }}</h4>
+    </div>
+    <div [matMenuTriggerFor]="beforeMenu">
+      <img src="../../../../assets/profile.png" class="img-perfil">
+    </div>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item (click)="goProfile()">
+        Perfil
+        <mat-icon>manage_accounts</mat-icon>
+      </button>
+      <button mat-menu-item (click)="submitLogout()">Logout<mat-icon>logout</mat-icon></button>
+    </mat-menu>
+  </div>
